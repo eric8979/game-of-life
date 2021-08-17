@@ -3,7 +3,7 @@ import GameBoard from "../components/GameBoard";
 
 const Main = () => {
   return (
-    <div>
+    <div className="page">
       <ControlBar />
       <GameBoard />
     </div>

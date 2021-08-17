@@ -2,17 +2,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // pages
 import Main from "./page/main";
 import About from "./page/about";
-// style
-import "./style/App.scss";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Main />
         </Route>
-        <Route path="/about">
+        <Route exact path="/about">
           <About />
         </Route>
       </Switch>
