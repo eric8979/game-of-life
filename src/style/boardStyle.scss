@@ -2,16 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid;
 }
 
-.board {
-  width: 1000px;
-  height: 1000px;
-  border: 1px solid;
-
-  .box {
-    width: 10px;
-    height: 10px;
-    background-color: green;
-  }
+.boxItem {
+  border: 2px solid;
+  margin: 2px;
 }

@@ -3,8 +3,22 @@ import { Link } from "react-router-dom";
 import "../style/controlBar.scss";
 
 const ControlBar = () => {
-  const [boardSize, setBoardSize] = useState("10");
-  const [speed, setSpeed] = useState("5");
+  const [boardSize, setBoardSize] = useState(10);
+  const [speed, setSpeed] = useState(5);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value);
+
+    if (value < 1) {
+      window.alert("Enter number bigger than 1");
+      return;
+    }
+    if (e.target.id === "speed") {
+      setSpeed(value);
+    } else if (e.target.id === "size") {
+      setBoardSize(value);
+    }
+  };
 
   return (
     <div className="controlBar">
@@ -15,19 +29,19 @@ const ControlBar = () => {
         <label htmlFor="speed">
           Speed
           <input
-            type="text"
+            type="number"
             id="speed"
-            value={speed}
-            onChange={(e) => setSpeed(e.target.value)}
+            value={speed.toString()}
+            onChange={onChange}
           />
         </label>
         <label htmlFor="size">
           Board Size
           <input
-            type="text"
+            type="number"
             id="size"
-            value={boardSize}
-            onChange={(e) => setBoardSize(e.target.value)}
+            value={boardSize.toString()}
+            onChange={onChange}
           />
         </label>
         <button id="clear">CLEAR</button>
